@@ -5,4 +5,5 @@ COPY . .
 
 RUN pip install --no-cache-dir -e .
 
-CMD ["python", "-m", "src.myapp.app"]
+ENV FLASK_APP=src.myapp.app
+CMD ["flask", "run", "--host=0.0.0.0"]

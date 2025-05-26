@@ -8,5 +8,6 @@ setup(
     install_requires=[
         'flask==2.0.3',
         'werkzeug==2.0.3',
+        'pytest==7.1.2'
     ],
 )

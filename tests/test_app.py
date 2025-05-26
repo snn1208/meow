@@ -1,4 +1,4 @@
-from src.myapp import app
+from src.myapp.app import app
 import pytest
 
 @pytest.fixture
@@ -9,4 +9,5 @@ def client():
 
 def test_hello(client):
     response = client.get('/')
-    assert response.data == b"Hello, World!"
+    assert response.status_code == 200
+    assert response.data == b'Hello, World!'
