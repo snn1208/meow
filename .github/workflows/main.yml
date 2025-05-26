@@ -46,12 +46,8 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:latest
 
-  on:
-  push:
-    branches: [ main ]
-
- jobs:
-   deploy:
+  deploy:
+    needs: build-and-push
     runs-on: self-hosted  # 🔥 Важно: используем self-hosted runner
     
     steps:
